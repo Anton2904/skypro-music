@@ -1,0 +1,28 @@
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 51px;
+}
+
+.title {
+  margin-right: 5px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.button {
+  padding: 6px 20px;
+  border: 1px solid var(--text-primary);
+  border-radius: 60px;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media (max-width: 768px) {
+  .filter {
+    flex-wrap: wrap;
+  }
+}

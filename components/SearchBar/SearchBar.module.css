@@ -1,0 +1,30 @@
+.search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 51px;
+  border-bottom: 1px solid var(--text-muted);
+}
+
+.icon {
+  width: 17px;
+  height: 17px;
+  margin-right: 5px;
+  fill: transparent;
+  stroke: var(--text-primary);
+}
+
+.input {
+  flex-grow: 1;
+  padding: 13px 10px 14px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.input::placeholder {
+  color: var(--text-primary);
+}
