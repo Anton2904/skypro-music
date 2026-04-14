@@ -1,0 +1,142 @@
+.bar {
+  background-color: var(--background-secondary);
+}
+
+.progress {
+  width: 100%;
+  height: 5px;
+  background-color: #2e2e2e;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 36px;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 24px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.controlButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.playButton {
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  background-color: var(--text-primary);
+}
+
+.iconSmall {
+  width: 15px;
+  height: 14px;
+  fill: var(--text-secondary);
+}
+
+.iconPlay {
+  width: 14px;
+  height: 15px;
+  fill: #000000;
+}
+
+.iconMedium {
+  width: 18px;
+  height: 18px;
+  fill: transparent;
+  stroke: var(--text-secondary);
+}
+
+.trackBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 24px;
+}
+
+.trackInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trackImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 51px;
+  height: 51px;
+  background-color: #313131;
+}
+
+.noteIcon {
+  width: 18px;
+  height: 17px;
+  fill: var(--text-secondary);
+}
+
+.trackTitle,
+.trackAuthor {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.trackAuthor {
+  color: var(--text-secondary);
+}
+
+.reactions {
+  display: flex;
+  gap: 24px;
+}
+
+.iconReaction,
+.volumeIcon {
+  width: 16px;
+  height: 16px;
+  fill: transparent;
+  stroke: var(--text-secondary);
+}
+
+.volumeBlock {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 180px;
+}
+
+.range {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .content,
+  .player,
+  .trackBlock {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .volumeBlock {
+    min-width: 100%;
+  }
+}

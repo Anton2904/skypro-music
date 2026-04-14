@@ -1,0 +1,68 @@
+.sidebar {
+  width: 418px;
+  padding: 20px 90px 20px 0;
+}
+
+.personal {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 86px;
+}
+
+.name {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.logout {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.logoutIcon {
+  width: 20px;
+  height: 20px;
+  fill: transparent;
+  stroke: var(--text-primary);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.item {
+  display: block;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .personal {
+    justify-content: flex-start;
+    margin-bottom: 30px;
+  }
+
+  .list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .item {
+    max-width: 250px;
+  }
+}

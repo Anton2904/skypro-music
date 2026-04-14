@@ -1,0 +1,77 @@
+.item {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.6fr) minmax(160px, 1fr) minmax(140px, 1fr) 60px;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.titleBlock {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 51px;
+  height: 51px;
+  margin-right: 17px;
+  background-color: #313131;
+}
+
+.noteIcon {
+  width: 18px;
+  height: 17px;
+  fill: var(--text-secondary);
+}
+
+.titleText,
+.author,
+.album {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.titleText {
+  color: var(--text-primary);
+}
+
+.subtitle,
+.album {
+  color: var(--text-secondary);
+}
+
+.author {
+  color: var(--text-primary);
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-self: end;
+  color: var(--text-secondary);
+}
+
+.likeIcon {
+  width: 14px;
+  height: 12px;
+  fill: transparent;
+  stroke: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .time {
+    justify-self: start;
+  }
+}

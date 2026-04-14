@@ -1,0 +1,78 @@
+.wrapper {
+  min-height: 100vh;
+  background-color: #383838;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.modal {
+  width: 366px;
+  padding: 43px 47px;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+
+.input {
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid #d0cece;
+  outline: none;
+  color: #000000;
+}
+
+.input:not(:last-of-type) {
+  margin-bottom: 24px;
+}
+
+.login {
+  margin-bottom: 30px;
+}
+
+.input::placeholder {
+  color: #b1b1b1;
+}
+
+.errorContainer {
+  min-height: 20px;
+  margin: 24px 0;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  border-radius: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.primaryButton {
+  border: none;
+  background-color: #580ea2;
+  color: #ffffff;
+}
+
+.secondaryButton {
+  margin-top: 20px;
+  border: 1px solid #d0cece;
+  color: #000000;
+}

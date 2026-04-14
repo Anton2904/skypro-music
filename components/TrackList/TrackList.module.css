@@ -1,0 +1,38 @@
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.6fr) minmax(160px, 1fr) minmax(140px, 1fr) 60px;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.timeHeader {
+  justify-self: end;
+}
+
+.watchIcon {
+  width: 12px;
+  height: 12px;
+  fill: transparent;
+  stroke: var(--text-secondary);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+@media (max-width: 900px) {
+  .header {
+    display: none;
+  }
+}
