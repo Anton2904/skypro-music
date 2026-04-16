@@ -16,7 +16,7 @@ export default function Home() {
           <section className={styles.centerBlock}>
             <SearchBar />
             <h1 className={styles.title}>Треки</h1>
-            <FilterBar />
+            <FilterBar tracks={tracks} />
             <TrackList tracks={tracks} />
           </section>
           <Sidebar />
