@@ -1,14 +1,6 @@
 import styles from './TrackList.module.css';
 import { TrackItem } from '@/components/TrackItem/TrackItem';
-
-type Track = {
-  id: number;
-  title: string;
-  subtitle?: string;
-  author: string;
-  album: string;
-  duration: string;
-};
+import type { Track } from '@/data';
 
 type TrackListProps = {
   tracks: Track[];

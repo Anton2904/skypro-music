@@ -1,12 +1,7 @@
+import type { Track } from '@/data';
 import styles from './TrackItem.module.css';
 
-type TrackItemProps = {
-  title: string;
-  subtitle?: string;
-  author: string;
-  album: string;
-  duration: string;
-};
+type TrackItemProps = Pick<Track, 'title' | 'subtitle' | 'author' | 'album' | 'duration'>;
 
 export function TrackItem({ title, subtitle, author, album, duration }: TrackItemProps) {
   return (

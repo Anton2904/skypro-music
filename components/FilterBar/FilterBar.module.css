@@ -1,4 +1,5 @@
 .filter {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -11,6 +12,10 @@
   line-height: 24px;
 }
 
+.filterItem {
+  position: relative;
+}
+
 .button {
   padding: 6px 20px;
   border: 1px solid var(--text-primary);
@@ -19,10 +24,74 @@
   color: var(--text-primary);
   font-size: 16px;
   line-height: 24px;
+  cursor: pointer;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.button:hover,
+.active {
+  color: #b672ff;
+  border-color: #9a48f1;
+}
+
+.popup {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 10;
+  padding: 34px;
+  border-radius: 12px;
+  background-color: #313131;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.filterList {
+  color: white;
+  display: flex;
+  gap: 28px;
+  height: max-content;
+  max-height: 237px;
+  overflow-y: auto;
+  flex-direction: column;
+  width: max-content;
+  max-width: 248px;
+  min-width: 160px;
+}
+
+.filterList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.filterList::-webkit-scrollbar-track {
+  background-color: rgba(75, 73, 73, 1);
+}
+
+.filterList::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+
+.filterOption {
+  font-size: 20px;
+  line-height: 30px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.filterOption:hover {
+  color: #b672ff;
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
   .filter {
     flex-wrap: wrap;
+  }
+
+  .popup {
+    min-width: 220px;
+    padding: 24px;
   }
 }
