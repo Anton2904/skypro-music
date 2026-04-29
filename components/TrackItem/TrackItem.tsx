@@ -1,30 +1,63 @@
+'use client';
+
+import cn from 'classnames';
 import type { Track } from '@/data';
+import { setCurrentTrack } from '@/store/playerSlice';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import styles from './TrackItem.module.css';
 
-type TrackItemProps = Pick<Track, 'title' | 'subtitle' | 'author' | 'album' | 'duration'>;
+type TrackItemProps = {
+  track: Track;
+};
 
-export function TrackItem({ title, subtitle, author, album, duration }: TrackItemProps) {
+export function TrackItem({ track }: TrackItemProps) {
+  const dispatch = useAppDispatch();
+  const { currentTrack, isPlaying } = useAppSelector((state) => state.player);
+  const isCurrent = currentTrack?.id === track.id;
+
+  const handleClick = () => {
+    dispatch(setCurrentTrack(track));
+  };
+
+  const title = `${track.title}${track.subtitle ? ` ${track.subtitle}` : ''}`;
+
   return (
-    <article className={styles.item}>
+    <article
+      className={cn(styles.item, isCurrent && styles.activeItem)}
+      onClick={handleClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          handleClick();
+        }
+      }}
+      aria-label={`Включить трек ${title}`}
+    >
       <div className={styles.titleBlock}>
         <div className={styles.iconWrapper}>
-          <svg className={styles.noteIcon} aria-hidden="true">
-            <use xlinkHref="/img/icon/sprite.svg#icon-note" />
-          </svg>
+          {isCurrent ? (
+            <span className={cn(styles.playingDot, isPlaying && styles.playingDotAnimated)} aria-hidden="true" />
+          ) : (
+            <svg className={styles.noteIcon} aria-hidden="true">
+              <use xlinkHref="/img/icon/sprite.svg#icon-note" />
+            </svg>
+          )}
         </div>
         <div className={styles.titleText}>
-          {title} {subtitle ? <span className={styles.subtitle}>{subtitle}</span> : null}
+          {track.title} {track.subtitle ? <span className={styles.subtitle}>{track.subtitle}</span> : null}
         </div>
       </div>
 
-      <div className={styles.author}>{author}</div>
-      <div className={styles.album}>{album}</div>
+      <div className={styles.author}>{track.author}</div>
+      <div className={styles.album}>{track.album}</div>
 
       <div className={styles.time}>
         <svg className={styles.likeIcon} aria-hidden="true">
           <use xlinkHref="/img/icon/sprite.svg#icon-like" />
         </svg>
-        <span>{duration}</span>
+        <span>{track.duration}</span>
       </div>
     </article>
   );

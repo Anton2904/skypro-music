@@ -140,3 +140,13 @@
     min-width: 100%;
   }
 }
+
+.playButton:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.iconPause {
+  width: 16px;
+  height: 16px;
+}
