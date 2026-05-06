@@ -7,6 +7,7 @@ export type Track = {
   duration: string;
   year: number;
   genre: string;
+  audioUrl: string;
 };
 
 export const tracks: Track[] = [
@@ -18,6 +19,7 @@ export const tracks: Track[] = [
     duration: '4:44',
     year: 2011,
     genre: 'Dubstep',
+    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
   },
   {
     id: 2,
@@ -27,6 +29,7 @@ export const tracks: Track[] = [
     duration: '2:22',
     year: 2020,
     genre: 'Dance',
+    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
   },
   {
     id: 3,
@@ -36,6 +39,7 @@ export const tracks: Track[] = [
     duration: '2:22',
     year: 2022,
     genre: 'House',
+    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
   },
   {
     id: 4,
@@ -46,6 +50,7 @@ export const tracks: Track[] = [
     duration: '4:12',
     year: 2019,
     genre: 'Hip-Hop',
+    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
   },
   {
     id: 5,
@@ -56,6 +61,7 @@ export const tracks: Track[] = [
     duration: '2:54',
     year: 2023,
     genre: 'Tech House',
+    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
   },
 ];
 
