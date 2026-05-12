@@ -76,3 +76,15 @@
   border: 1px solid #d0cece;
   color: #000000;
 }
+
+.error {
+  margin: 0;
+  color: #d00000;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.primaryButton:disabled {
+  cursor: default;
+  opacity: 0.7;
+}

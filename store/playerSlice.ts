@@ -1,6 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import { tracks } from '@/data';
-import type { Track } from '@/data';
+import type { Track } from '@/lib/api/types';
 
 export type PlayerState = {
   currentTrack: Track | null;
@@ -12,7 +11,7 @@ export type PlayerState = {
 
 const initialState: PlayerState = {
   currentTrack: null,
-  playlist: tracks,
+  playlist: [],
   isPlaying: false,
   isShuffle: false,
   isLoop: false,
@@ -37,6 +36,14 @@ const playerSlice = createSlice({
   name: 'player',
   initialState,
   reducers: {
+    setPlaylist(state, action: PayloadAction<Track[]>) {
+      state.playlist = action.payload;
+
+      if (state.currentTrack && !action.payload.some((track) => track.id === state.currentTrack?.id)) {
+        state.currentTrack = null;
+        state.isPlaying = false;
+      }
+    },
     setCurrentTrack(state, action: PayloadAction<Track>) {
       state.currentTrack = action.payload;
       state.isPlaying = true;
@@ -95,5 +102,5 @@ const playerSlice = createSlice({
   },
 });
 
-export const { setCurrentTrack, playTrack, pauseTrack, togglePlay, nextTrack, previousTrack, toggleShuffle, toggleLoop } = playerSlice.actions;
+export const { setPlaylist, setCurrentTrack, playTrack, pauseTrack, togglePlay, nextTrack, previousTrack, toggleShuffle, toggleLoop } = playerSlice.actions;
 export const playerReducer = playerSlice.reducer;

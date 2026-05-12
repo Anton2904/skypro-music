@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import classNames from 'classnames';
-import type { Track } from '@/data';
+import type { Track } from '@/lib/api/types';
 import styles from './FilterBar.module.css';
 
 type FilterName = 'author' | 'year' | 'genre' | null;
@@ -36,17 +36,23 @@ export function FilterBar({ tracks }: FilterBarProps) {
   const [activeFilter, setActiveFilter] = useState<FilterName>(null);
 
   const authors = useMemo(
-    () => Array.from(new Set(tracks.map((track) => track.author))),
+    () =>
+      Array.from(new Set(tracks.map((track) => String(track.author)).filter(Boolean))).sort((a, b) =>
+        a.localeCompare(b),
+      ),
     [tracks],
   );
 
   const years = useMemo(
-    () => Array.from(new Set(tracks.map((track) => track.year))).sort((a, b) => b - a),
+    () => Array.from(new Set(tracks.map((track) => Number(track.year)).filter(Boolean))).sort((a, b) => b - a),
     [tracks],
   );
 
   const genres = useMemo(
-    () => Array.from(new Set(tracks.map((track) => track.genre))).sort((a, b) => a.localeCompare(b)),
+    () =>
+      Array.from(new Set(tracks.map((track) => String(track.genre)).filter(Boolean))).sort((a, b) =>
+        a.localeCompare(b),
+      ),
     [tracks],
   );
 
