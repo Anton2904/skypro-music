@@ -1,7 +1,7 @@
 'use client';
 
 import cn from 'classnames';
-import type { Track } from '@/data';
+import type { Track } from '@/lib/api/types';
 import { setCurrentTrack } from '@/store/playerSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import styles from './TrackItem.module.css';

@@ -1,6 +1,6 @@
 import styles from './TrackList.module.css';
 import { TrackItem } from '@/components/TrackItem/TrackItem';
-import type { Track } from '@/data';
+import type { Track } from '@/lib/api/types';
 
 type TrackListProps = {
   tracks: Track[];
